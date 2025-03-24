@@ -63,3 +63,27 @@ def remove_task(tasks):
 print("Initializing To-Do List...")
 tasks = load_tasks()
 
+
+# Step 3: Provide user options
+while True:
+    print("\nTo-Do List Menu:")
+    print("1. View Tasks")
+    print("2. Add Task")
+    print("3. Remove Task")
+    print("4. Exit")
+
+    choice = input("Enter your choice: ")
+
+    if choice == '1':
+        display_tasks(tasks)
+    elif choice == '2':
+        add_task(tasks)
+    elif choice == '3':
+        remove_task(tasks)
+    elif choice == '4':
+        print("\nExiting... Goodbye!")
+        break
+    else:
+        print("\nInvalid choice! Please try again.")
+
+
