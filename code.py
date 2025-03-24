@@ -11,3 +11,12 @@ def load_tasks():
         print("No previous tasks found. Starting fresh!")
         return []
 
+
+def save_tasks(tasks):
+    """Save tasks to a file."""
+    print("\nSaving tasks to file...")
+    with open("tasks.txt", "w") as file:
+        for task in tasks:
+            file.write(task + "\n")
+    print("Tasks saved successfully!")
+
