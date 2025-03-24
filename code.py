@@ -19,6 +19,7 @@ def save_tasks(tasks):
         for task in tasks:
             file.write(task + "\n")
     print("Tasks saved successfully!")
+    
 
 
 def display_tasks(tasks):
