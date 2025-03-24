@@ -10,3 +10,4 @@ def load_tasks():
     except FileNotFoundError:
         print("No previous tasks found. Starting fresh!")
         return []
+
