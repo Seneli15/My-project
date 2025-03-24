@@ -57,3 +57,9 @@ def remove_task(tasks):
     except ValueError:
         print("Please enter a valid number!")
 
+
+
+# Step 2: Load existing tasks
+print("Initializing To-Do List...")
+tasks = load_tasks()
+
