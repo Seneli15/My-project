@@ -87,3 +87,53 @@ while True:
         print("\nInvalid choice! Please try again.")
 
 
+
+def mark_task_done(tasks):
+    """Mark a task as completed or unmark if already done."""
+    print("\nMarking a task as done...")
+    display_tasks(tasks)
+    
+    try:
+        task_num = int(input("Enter the task number to mark/unmark as done: ")) - 1
+        if 0 <= task_num < len(tasks):
+            if "✅" in tasks[task_num]:  # If task is already marked done
+                confirm = input("This task is already marked done. Unmark it? (y/n): ").strip().lower()
+                if confirm == 'y':
+                    tasks[task_num] = tasks[task_num].replace(" ✅", "")  # Remove checkmark
+                    save_tasks(tasks)
+                    print(f"Task '{tasks[task_num]}' is now marked as pending.")
+            else:
+                confirm = input("Are you sure you want to mark this task as done? (y/n): ").strip().lower()
+                if confirm == 'y':
+                    tasks[task_num] += " ✅"
+                    save_tasks(tasks)
+                    print(f"Task '{tasks[task_num]}' marked as done!")
+        else:
+            print("Invalid task number!")
+    except ValueError:
+        print("Please enter a valid number!")
+
+# Add this option to the menu
+while True:
+    print("\nTo-Do List Menu:")
+    print("1. View Tasks")
+    print("2. Add Task")
+    print("3. Remove Task")
+    print("4. Mark/Unmark Task as Done")  # Improved feature
+    print("5. Exit")
+
+    choice = input("Enter your choice: ")
+
+    if choice == '1':
+        display_tasks(tasks)
+    elif choice == '2':
+        add_task(tasks)
+    elif choice == '3':
+        remove_task(tasks)
+    elif choice == '4':  # Improved Feature
+        mark_task_done(tasks)
+    elif choice == '5':
+        print("\nExiting... Goodbye!")
+        break
+    else:
+        print("\nInvalid choice! Please try again.")
