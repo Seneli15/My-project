@@ -36,3 +36,14 @@ elif choice == '4':
     print(f"Result: {divide(num1, num2)}")
 else:
     print("Invalid input!")
+
+def modulus(x, y):
+    return x % y
+
+print("5. Modulus")
+
+choice = input("Enter choice (1/2/3/4/5): ")
+
+if choice == '5':
+    print(f"Result: {modulus(num1, num2)}")
+
