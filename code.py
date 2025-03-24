@@ -20,3 +20,14 @@ def save_tasks(tasks):
             file.write(task + "\n")
     print("Tasks saved successfully!")
 
+
+def display_tasks(tasks):
+    """Display the current tasks."""
+    print("\nDisplaying current tasks...")
+    if not tasks:
+        print("No tasks available!")
+    else:
+        print("\nYour Tasks:")
+        for i, task in enumerate(tasks, 1):
+            print(f"{i}. {task}")
+
