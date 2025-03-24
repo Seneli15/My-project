@@ -1,38 +1,12 @@
-def add(x, y):
-    return x + y
-print("1. Add")
-def add(x, y):
-    return x + y
+# Step 1: Define functions for to-do list operations
 
-def subtract(x, y):
-    return x - y
-
-def multiply(x, y):
-    return x * y
-
-def divide(x, y):
-    if y == 0:
-        return "Error! Division by zero."
-    return x / y
-
-print("Select operation:")
-print("1. Add")
-print("2. Subtract")
-print("3. Multiply")
-print("4. Divide")
-
-choice = input("Enter choice (1/2/3/4): ")
-
-num1 = float(input("Enter first number: "))
-num2 = float(input("Enter second number: "))
-
-if choice == '1':
-    print(f"Result: {add(num1, num2)}")
-elif choice == '2':
-    print(f"Result: {subtract(num1, num2)}")
-elif choice == '3':
-    print(f"Result: {multiply(num1, num2)}")
-elif choice == '4':
-    print(f"Result: {divide(num1, num2)}")
-else:
-    print("Invalid input!")
+def load_tasks():
+    """Load tasks from a file."""
+    print("\nLoading tasks from file...")
+    try:
+        with open("tasks.txt", "r") as file:
+            tasks = file.readlines()
+        return [task.strip() for task in tasks]
+    except FileNotFoundError:
+        print("No previous tasks found. Starting fresh!")
+        return []
